@@ -1,6 +1,6 @@
 import 'package:doctor_app/Models/field_properties.dart';
+import 'package:doctor_app/Models/homemodel.dart';
 import 'package:doctor_app/Screens/splash_screen.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +10,9 @@ void main() {
     providers: [
       ChangeNotifierProvider(
         create: (_) => FiledProperties(),
+      ),
+      ChangeNotifierProvider(
+        create: (_) => HomeModel(),
       ),
     ],
     child: const MyApp(),
@@ -24,7 +27,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         textTheme: const TextTheme(
-          headline1: TextStyle(),
+          headline1: TextStyle(
+            fontWeight: FontWeight.w600,
+            color: Colors.black,
+          ),
           headline2: TextStyle(),
           bodyText1: TextStyle(
             fontWeight: FontWeight.w400,
